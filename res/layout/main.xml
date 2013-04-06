@@ -1,13 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
         >
+    <EditText
+            android:layout_width="85dp"
+            android:layout_height="40dp"
+            android:id="@+id/busNoSearch" android:layout_gravity="center"
+            android:layout_alignParentLeft="true" android:layout_marginLeft="107dp"
+            android:layout_alignTop="@+id/busNoText"/>
     <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="54dp"
+            android:layout_height="27dp"
+            android:text="Bus no:"
+            android:id="@+id/busNoText" android:layout_gravity="left|center_vertical"
+            android:layout_alignParentLeft="true" android:layout_marginLeft="21dp" android:layout_alignParentTop="true"
+            android:layout_marginTop="17dp"/>
+    <Spinner
+            android:layout_width="85dp"
             android:layout_height="wrap_content"
-            android:text="Hello World, BFF"
-            />
-</LinearLayout>
+            android:id="@+id/timingCombo" android:layout_gravity="center"
+            android:layout_alignLeft="@+id/busNoSearch" android:layout_alignTop="@+id/timingLabel"
+            android:spinnerMode="dropdown"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Timing"
+            android:id="@+id/timingLabel" android:layout_gravity="left|center_vertical"
+            android:layout_alignLeft="@+id/busNoText" android:layout_alignParentTop="true"
+            android:layout_marginTop="66dp"/>
+    <RadioGroup
+            android:layout_width="142dp"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:layout_alignLeft="@+id/busNoText" android:layout_alignParentTop="true"
+            android:layout_marginTop="114dp">
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Very High"
+                android:id="@+id/HighRadio" android:layout_gravity="left|center_vertical" android:checked="false"/>
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Very Low"
+                android:id="@+id/LowRadio" android:layout_gravity="left|center_vertical" android:checked="false"/>
+    </RadioGroup>
+    <Button
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:id="@+id/submit"
+            android:layout_alignParentLeft="true" android:layout_marginLeft="92dp" android:layout_alignParentTop="true"
+            android:layout_marginTop="222dp" android:layout_alignRight="@+id/busNoSearch"/>
+</RelativeLayout>
 
