@@ -47,11 +47,14 @@ public class BFF extends Activity {
             @Override
             public void onClick(View view) {
                 setFieldsFromView();
-                if (!validateInput())
-                    showAlertDialog("Error!", "All fields must be given.");
+                if (!validateInput())   {
+                    Toast toast = Toast.makeText(applicationContext, "Please enter all fields ",1000);
+                    toast.show();
+                }
+
                 else {
                     AsyncTask<Void, Void, Void> execute = new RequestItemsServiceTask().execute();
-                    Toast toast = Toast.makeText(applicationContext, "Thanks for your feedback",2000);
+                    Toast toast = Toast.makeText(applicationContext, "Thanks for your feedback",1000);
                     toast.show();
                 }
 
@@ -70,12 +73,6 @@ public class BFF extends Activity {
         if(frequency==null || busNo==null || busNo.isEmpty()||range==null)
             return false;
         return true;
-    }
-
-    private void showAlertDialog(String title, String message) {
-        alertDialog.setTitle(title);
-        alertDialog.setMessage(message);
-        alertDialog.show();
     }
 
     private void setFieldsFromView() {
