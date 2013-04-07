@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Bus-Frequency-Feedback-Android</string>
+    <string name="app_name">Bus Frequency Feedback</string>
     <string-array name="Timing">
         <item>0-1</item>
         <item>1-2</item>

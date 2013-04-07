@@ -2,6 +2,7 @@ package com.bff;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -39,7 +40,7 @@ public class BFF extends Activity {
         VWisHighFreq = findViewById(R.id.HighRadio);
         VWisLowFreq = findViewById(R.id.LowRadio);
         VWtiming = findViewById(R.id.timingCombo);
-
+        final Context applicationContext = getApplicationContext();
         InitiazeTimingComboBox();
 
         submitButton.setOnClickListener(new View.OnClickListener() {
@@ -50,10 +51,10 @@ public class BFF extends Activity {
                     showAlertDialog("Error!", "All fields must be given.");
                 else {
                     AsyncTask<Void, Void, Void> execute = new RequestItemsServiceTask().execute();
+                    Toast toast = Toast.makeText(applicationContext, "Thanks for your feedback",2000);
+                    toast.show();
                 }
-                if(statusCode!=200){
-//                    showAlertDialog("DB Error!", "Error.");
-                }
+
             }
         });
     }
